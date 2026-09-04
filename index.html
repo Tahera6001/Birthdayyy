@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>31 Days of You ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap');
+:root{--pink:#f6dce5;--rose:#b86f86;--cream:#fffaf5;--ink:#493b42;--gold:#b89b67;--dark:#2e2730}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at 10% 10%,#fff 0 8%,transparent 25%),linear-gradient(135deg,#fffaf5,#f8e9ed);font-family:"DM Sans",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#8b6573 0.6px,transparent .6px);background-size:18px 18px}
+.hero{min-height:100vh;display:grid;place-items:center;padding:40px 20px;text-align:center;position:relative;overflow:hidden}
+.hero-card{max-width:780px;padding:48px 28px;border:1px solid #fff;background:rgba(255,255,255,.58);backdrop-filter:blur(12px);border-radius:30px;box-shadow:0 25px 80px rgba(100,55,70,.13)}
+.kicker{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--rose);font-weight:600}
+h1{font-family:"Great Vibes",cursive;font-size:clamp(58px,13vw,118px);font-weight:400;line-height:.9;margin:18px 0;color:#9e5d74}
+.hero h2{font-family:"Cormorant Garamond",serif;font-size:clamp(25px,5vw,40px);margin:20px 0 10px;font-weight:600}
+.subtitle{font-family:"Cormorant Garamond",serif;font-size:22px;max-width:600px;margin:0 auto 28px}
+.count{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px auto}
+.time{background:#fff;border-radius:16px;padding:12px 18px;min-width:80px;box-shadow:0 8px 25px #8e52631c}.time b{display:block;font:600 28px "Cormorant Garamond";color:#9e5d74}.time span{font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.btn{border:0;border-radius:999px;padding:13px 22px;background:#9e5d74;color:#fff;cursor:pointer;font-weight:600;box-shadow:0 8px 25px #9e5d7438}.btn:hover{transform:translateY(-2px)}
+.section{max-width:1050px;margin:auto;padding:80px 20px}.section-title{text-align:center;font-family:"Cormorant Garamond";font-size:48px;margin:0 0 12px}.section-sub{text-align:center;margin:0 auto 35px;max-width:650px;color:#76666d}
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.day{background:rgba(255,255,255,.72);border:1px solid #fff;border-radius:22px;padding:20px;min-height:175px;box-shadow:0 10px 35px #7f4f6010;position:relative;overflow:hidden}
+.day:after{content:"♡";position:absolute;right:16px;top:8px;font-size:55px;color:#b86f8614;font-family:serif}
+.day h3{margin:0 0 8px;font:600 25px "Cormorant Garamond";color:#985a70}.day p{font-size:14px;line-height:1.65;margin:0 0 15px}.day button{background:none;border:1px solid #d6a9b8;color:#985a70;border-radius:999px;padding:8px 13px;cursor:pointer}
+.day.opened{background:#fff}.day.locked{opacity:.62}.day.locked button{cursor:not-allowed}
+.letter{background:#fffdf8;border:1px solid #eadfce;border-radius:5px;padding:34px 28px;max-width:780px;margin:auto;box-shadow:0 20px 50px #6c4d3815;position:relative}
+.letter:before{content:"";position:absolute;inset:12px;border:1px solid #eadfce;pointer-events:none}
+.letter p{font-family:"Cormorant Garamond";font-size:21px;line-height:1.7;position:relative}
+.signature{font-family:"Great Vibes";font-size:38px;color:#9e5d74}
+.music{display:grid;grid-template-columns:1fr 1fr;gap:18px}.song{background:rgba(255,255,255,.7);padding:24px;border-radius:22px}.song strong{font:600 27px "Cormorant Garamond";color:#985a70}.song small{display:block;margin-top:6px;color:#806f77}
+.timeline{max-width:760px;margin:auto}.event{display:flex;gap:20px;margin:20px 0;align-items:flex-start}.date{min-width:75px;text-align:center;border-radius:15px;background:#fff;padding:10px;color:#985a70;font-weight:600}.event p{margin:0;line-height:1.6}
+.footer{text-align:center;padding:70px 20px 100px}.footer h2{font:400 58px "Great Vibes";color:#9e5d74;margin:0 0 10px}
+.modal{display:none;position:fixed;z-index:20;inset:0;background:#2d222b99;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{max-width:620px;width:100%;background:#fffaf5;border-radius:25px;padding:35px;box-shadow:0 30px 90px #0004;max-height:85vh;overflow:auto}.modal-box h2{font:600 38px "Cormorant Garamond";color:#985a70;margin-top:0}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer;color:#985a70}
+.floating{position:fixed;right:18px;bottom:18px;border:0;border-radius:50%;width:52px;height:52px;background:#fff;color:#985a70;box-shadow:0 8px 30px #0002;cursor:pointer;font-size:20px}
+@media(max-width:650px){.music{grid-template-columns:1fr}.section{padding:60px 15px}.letter{padding:28px 20px}.letter p{font-size:19px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-card">
+    <div class="kicker">A little corner of the internet, made only for you</div>
+    <h1>31 Days of You</h1>
+    <h2>For my Laddoo Gopal ♡</h2>
+    <p class="subtitle">31 tiny surprises. One very big reason: because one birthday is simply not enough for you.</p>
+    <div class="count" id="countdown"></div>
+    <button class="btn" onclick="document.getElementById('countdownSection').scrollIntoView()">Start the countdown ↓</button>
+  </div>
+</header>
+
+<section class="section" id="countdownSection">
+  <h2 class="section-title">Our little countdown</h2>
+  <p class="section-sub">From <b>September 4</b> to <b>October 5</b>. Come back every day. ♡</p>
+  <div class="days" id="days"></div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our story</h2>
+  <div class="timeline">
+    <div class="event"><div class="date">7 MAY</div><p><b>The day that became ours.</b><br>Somehow, an online beginning turned into late-night talks, inside jokes, missing each other, and a person who became impossible not to love.</p></div>
+    <div class="event"><div class="date">NOW</div><p><b>Long distance.</b><br>Different screens, same feelings. And somehow the distance only gives us more reasons to count the days until we meet.</p></div>
+    <div class="event"><div class="date">5 OCT</div><p><b>Your day.</b><br>The day the world gets to celebrate you — while I get to celebrate the fact that you exist in my world.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Songs that sound like you</h2>
+  <p class="section-sub">Because sometimes a song says what a paragraph can't.</p>
+  <div class="music">
+    <div class="song"><strong>Maula Mere Maula</strong><small>For the feeling I can't quite put into words.</small></div>
+    <div class="song"><strong>Tum Hi Ho</strong><small>Because yes. Dramatic? Maybe. True? Absolutely.</small></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">A tiny confession</h2>
+  <div class="letter">
+    <p>Dear Pandaa,</p>
+    <p>We started in the most random, slightly creepy-online way possible, and somehow I ended up here — making an entire little website for your birthday.</p>
+    <p>I don't know at what exact point late-night talks became something I started looking forward to, or when you became someone I could miss even while talking to you. But you did.</p>
+    <p>So this isn't really a birthday website. It's 31 little pieces of me finding their way to you before October 5.</p>
+    <p>And yes, you still owe me <b>₹2 lakh</b>. Don't think this website made me forget. 😭</p>
+    <p>Happy almost-birthday, my Laddoo Gopal.</p>
+    <p class="signature">Yours, Pandaa ♡</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <h2>See you on October 5 ♡</h2>
+  <p>Made with too much love, too many late-night thoughts, and absolutely no chill.</p>
+  <p style="font-size:12px;opacity:.65">Mummy • Biryani • Diet Coke • ₹2,00,000 pending</p>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div>
+</div>
+<button class="floating" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const surprises = {
+31:["The Beginning","31 days until your birthday. But I'm starting early because one day isn't enough for you.","A tiny warning: this is only Day 31. You have no idea what's coming."],
+30:["A Playlist","Your first official birthday present: a playlist made of songs that remind me of you.","Maula Mere Maula + Tum Hi Ho are already waiting. ♡"],
+29:["Our Story in 29 Lines","29 tiny lines about how an online conversation became our thing.","I'll fill these lines with our actual memories — one little moment at a time."],
+28:["Vintage Mail","Today you're getting an old-fashioned love letter from your very modern long-distance girlfriend.","Dear Pandaa… if letters could cross distance, this one would already be sitting beside you."],
+27:["Choose One","A silly little game: pick one — midnight call / daytime date, biryani / dessert, hug / forehead kiss, me annoying you / me missing you.","No cheating. And yes, I will judge every answer."],
+25:["Memory Lane","Today is for our favourite memory: those late-night talks that somehow became my favourite part of the day.","Tell me yours too. I want to know which moment lives in your head."],
+24:["Open When…","Four tiny letters for four different versions of you.","Open when you miss me • Open when you're sad • Open when you can't sleep • Open when you need me"],
+23:["Couple Quiz","Let's see how well you remember us.","Questions about our first conversations, favourite memories, stupid inside jokes and the things only we know."],
+22:["24 Hours Together","If distance disappeared for exactly 24 hours, this is what I'd do with you.","Wake up late, eat something ridiculously good, go somewhere pretty, talk for hours, and refuse to say goodbye."],
+20:["His World","Today is all about the things that make you you.","Mummy. Biryani. Diet Coke. And apparently collecting ₹2 lakh debts. 😭"],
+18:["Our Future List","Things I want us to do someday.","A proper date • late-night drive • eat biryani together • take terrible photos • watch sunrise • travel somewhere new • make ordinary days feel special"],
+16:["A Corner Just for You","You made it to the tiny website I made because apparently texting wasn't enough.","This page exists because you're worth the extra effort."],
+15:["Halfway Letter","We're halfway there.","15 things I want you to know about how much you mean to me — no jokes, no teasing, just me being honest."],
+14:["BREAKING NEWS","Local boy named Pandaa continues to be loved despite being an absolute menace.","Sources confirm: girlfriend is still obsessed. Authorities have no further comment."],
+13:["Childhood Day","Today we swap childhood stories and photos.","I want to know the tiny version of you — the kid before I knew you."],
+10:["Ten Dates","10 dates I want with you someday.","Midnight walk • street-food date • movie night • cooking together • long drive • café date • beach day • bookstore date • rainy-day chai • doing absolutely nothing together"],
+8:["Our Timeline","A little map of us.","7 May → late-night talks → inside jokes → missing you → all the tiny moments that became something much bigger."],
+6:["Dear Future You","A letter to the version of you reading this one year from now.","I hope future-you is happy. I hope we have collected a hundred more memories. And I hope you still know how loved you are."],
+5:["Five Minutes of Me","A little video/voice-note day.","Tell him five things in your own voice: what you miss, what you love, your favourite memory, what you want to do together, and one completely random thing."],
+4:["Four Little Messages","Four messages, four times.","Morning: good morning, birthday boy-in-training • Afternoon: I miss you • Evening: one memory • Night: sleep well, Pandaa"],
+3:["Three Wishes","Three wishes for us.","More memories. More ordinary days together. And one day, a birthday where I don't have to celebrate you through a screen."],
+2:["Birthday Eve","Tomorrow is your day.","Before everyone else wishes you, I want you to know that your existence has become one of my favourite things."],
+1:["Midnight","Do not open until midnight.","Your 10-page vintage letter. Your longest voice note. And the last little piece before the actual birthday."],
+0:["THE BIRTHDAY","Happy Birthday, my Laddoo Gopal ♡","You made it. Now open the final surprise — the one I've been saving for October 5."]
+};
+
+const dates = [31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1];
+const unavailable = [26,21,19,17,12,11,9,7];
+const today = new Date();
+const target = new Date("2026-10-05T00:00:00+05:30");
+const dayIndex = Math.max(0, Math.min(31, Math.ceil((target - today)/86400000)));
+
+function renderDays(){
+  const box=document.getElementById("days");
+  dates.forEach(d=>{
+    const card=document.createElement("div"); card.className="day";
+    let title,desc;
+    if(unavailable.includes(d)){ title="A Secret Day"; desc="This day is intentionally skipped. The next surprise is waiting. ♡"; }
+    else {[title,desc]=surprises[d]||["A Little Surprise","Something made just for you."];}
+    const isAvailable = d <= dayIndex || d===31;
+    card.innerHTML=`<h3>Day ${d}</h3><p><b>${title}</b><br>${desc}</p><button ${isAvailable&&!unavailable.includes(d)?"":"disabled"}>${isAvailable&&!unavailable.includes(d)?"Open ♡":"Locked"}</button>`;
+    if(isAvailable&&!unavailable.includes(d)) card.querySelector("button").onclick=()=>openModal(d);
+    box.appendChild(card);
+  });
+}
+function openModal(d){
+ const s=surprises[d]; if(!s)return;
+ document.getElementById("modalContent").innerHTML=`<div class="kicker">DAY ${d}</div><h2>${s[0]}</h2><p style="font-size:18px;line-height:1.8">${s[1]}</p><div style="background:#f8e9ed;padding:18px;border-radius:16px;line-height:1.7">${s[2]}</div>`;
+ document.getElementById("modal").classList.add("show");
+}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+function updateCountdown(){
+ const now=new Date(), diff=Math.max(0,target-now);
+ const days=Math.floor(diff/86400000), hrs=Math.floor(diff%86400000/3600000), mins=Math.floor(diff%3600000/60000), secs=Math.floor(diff%60000/1000);
+ document.getElementById("countdown").innerHTML=`<div class="time"><b>${days}</b><span>Days</span></div><div class="time"><b>${hrs}</b><span>Hours</span></div><div class="time"><b>${mins}</b><span>Minutes</span></div><div class="time"><b>${secs}</b><span>Seconds</span></div>`;
+}
+renderDays(); updateCountdown(); setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
